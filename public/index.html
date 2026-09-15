@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Username Login Modal -->
+  <div id="username-modal" class="modal">
+    <div class="modal-content">
+      <h2>Welcome to Discord Clone</h2>
+      <p>Enter a username to join the chat</p>
+      <input type="text" id="username-input" placeholder="e.g. Gamer123" maxlength="15" autocomplete="off">
+      <button id="join-btn">Join Chat</button>
+    </div>
+  </div>
+
+  <!-- Main Interface -->
+  <div class="discord-container">
+    <!-- Server List -->
+    <div class="servers-sidebar">
+      <div class="server-icon active">D</div>
+      <div class="server-icon">+</div>
+    </div>
+
+    <!-- Channels List -->
+    <div class="channels-sidebar">
+      <div class="server-header">
+        <h3>Codespaces Server</h3>
+      </div>
+      <div class="channels-list">
+        <div class="channel-category">TEXT CHANNELS</div>
+        <div class="channel active"><span>#</span> general</div>
+        <div class="channel"><span>#</span> random</div>
+      </div>
+      <div class="user-profile">
+        <div class="avatar" id="current-user-avatar">?</div>
+        <div class="user-info">
+          <span class="username" id="display-username">Guest</span>
+          <span class="status">#0001</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Chat Window -->
+    <div class="chat-area">
+      <div class="chat-header">
+        <span class="hash">#</span>
+        <span class="channel-name">general</span>
+      </div>
+
+      <div class="messages-container" id="messages-container">
+        <!-- Messages appear here dynamically -->
+      </div>
+
+      <div class="input-container">
+        <input type="text" id="message-input" placeholder="Message #general" autocomplete="off" disabled />
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Socket.IO client script provided automatically by the server -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
